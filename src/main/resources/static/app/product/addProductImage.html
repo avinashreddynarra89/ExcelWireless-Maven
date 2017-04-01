@@ -1,0 +1,64 @@
+<div class="container" ng-Controller = "AddProductImageController">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Search for Product by description" style="height:52px;width:100%;">
+            </div>
+            <div class="col-md-3">
+
+                <select id="prType" data-ng-model="productType" class="form-control"  ng-change="selectproductType()" style="height:52px;width:100%;">
+                    <option value="">Select All</option>
+                    <option value="Brand">Brand</option>
+                    <option value="Vendor">Vendor</option>
+                    <option value="Category">Category</option>
+                </select>
+            </div>
+            <div class="col-md-3" ng-show="productType == 'Category'">
+                <!--<select  class="form-control"  id="category" ng-model="category"
+                        data-ng-options="category.categoryId as category.categoryName for category in GlobalVariable.categoryList" ng-change="checkValueProduct(selectedCategory)">
+                         <option value="">Select</option>
+                </select>-->
+                <select class="form-control" name="repeatSelect" id="repeatSelect" ng-model="selectedCategory" ng-change="checkValueProduct(selectedCategory)">
+                    <option ng-repeat="category in GlobalVariable.categoryList" value="{{category.categoryId}}">{{category.categoryName}}</option>
+                </select>
+            </div>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-md-12">
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>SKU</th>
+                    <th>Product-Description</th>
+                    <th>Category</th>
+                    <th>Cost</th>
+                    <th>Retail</th>
+                    <th>Stock</th>
+                    <th>Edit</th>
+                    <th>Add Image</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat = "product in products | filter : {categoryId : selectedCategory}" >
+                    <td>1</td>
+                    <td ><img  ng-src="data:image/JPEG;base64,{{product.image}}" height="100px" width="100px" /></td>
+                    <td>{{product.productNo}}</td>
+                    <td>{{product.description}}</td>
+                    <td>{{product.categoryId}}</td>
+                    <td>{{product.costPrice}}</td>
+                    <td>{{product.retailPrice}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td> <input type="file" id = "fileElement"/></td>
+                    <td><button ng-click="uploadImage(product.productId,$index)">Add Image</button></td>
+                </tr>
+                </tbody>
+            </table>
+                </div>
+            </div>
+        </div>
+

@@ -1,0 +1,93 @@
+<div class="container" ng-controller = "SignUpController as signUp">
+    <div style="font-size: 35px">
+        <h2>Create Customer</h2>
+    </div>
+    <div class="row">
+        <form name="signUpForm">
+            <div class="col-md-4">
+
+                    <label>First Name:</label>
+                    <input type="text" class="form-control" placeholder="FirstName" ng-model = "signUp.firstName" required="true">
+            </div>
+
+                <div class="col-md-4">
+                    <label>Last Name:</label>
+                    <input type="text" class="form-control" placeholder="LastName" ng-model = "signUp.lastName"> </input>
+                </div>
+
+                <div class="col-md-4">
+                    <label>Phone Number:</label>
+                    <input type="text" class="form-control" placeholder="PhoneNumber" ng-model = "signUp.phoneNumber"> </input>
+                </div>
+
+                <div class="col-md-4">
+                    <label>Tax Id:</label>
+                    <input type="text" class="form-control" placeholder="Tax Id" ng-model = "signUp.taxId"> </input>
+                </div>
+
+                <div class="col-md-4">
+                    <label>Date Of Birth:</label>
+                    <input type="text" class="form-control" placeholder="Date Of Birth" ng-model = "signUp.dateOfBirth"> </input>
+                </div>
+                <div class="col-md-4">
+                    <label>Email:</label>
+                    <input type="text" class="form-control" placeholder="Email" ng-model = "signUp.email"> </input>
+                </div>
+                <div class="col-md-4">
+                    <label>Customer Type:</label>
+                    <select class="form-control" ng-model = "signUp.customerType">
+                        <option selected="selected">Business Customer</option>
+                        <option>Retail Customer</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Gender:</label>
+                    <div>
+                        <label class="radio-inline">
+                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="male" ng-model = "signUp.gender">Male
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="female" ng-model = "signUp.gender">Female
+                        </label>
+                    </div>
+                    </div>
+        <div class="col-md-8">
+            <label>CompanyName:</label>
+            </div>
+        <div class="col-md-8">
+            <input type="text" class="form-control" placeholder="Company Name" ng-model = "signUp.companyName"> </input>
+        </div>
+        <div class="col-md-4">
+            <label>Street:</label>
+            <input type="text" class="form-control" placeholder="Street" ng-model = "signUp.street"> </input>
+        </div>
+        <div class="col-md-4">
+            <label>City:</label>
+            <input type="text" class="form-control" placeholder="City" ng-model = "signUp.city"> </input>
+        </div>
+        <div class="col-md-4">
+            <label>ZipCode:</label>
+            <input type="text" class="form-control" placeholder="ZipCode" ng-model = "signUp.zipCode"> </input>
+        </div>
+        <div class="col-md-4">
+            <label>State:</label>
+            <select class="form-control" ng-model = "signUp.state">
+                <option>Gorgia</option>
+                <option>New York</option>
+            </select>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-4"> </div>
+            <div class="col-md-4" style="padding: 15px">
+                <button type="button" class="btn btn-primary" style="width: 100%;padding: 10px" ng-click = "signUp.addCustomer()">Register</button>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+
+        </div>
+
+        </form>
+
+    </div>
+        </div>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="excelWireless">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.js"></script>-->
+    <!--<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>-->
+
+    <!--<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.1/angular.js"> </script> doene-->
+    <script src="libs/angular.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>-->
+    <script src="libs/jquery-3.1.1.min.js"></script>
+    <script src="libs/bootstrap.js"></script>
+
+
+    <!--<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script> done-->
+    <script src="libs/ui-bootstrap-tpls-0.10.0.js"></script>
+
+
+
+    <!--<script src="bower_components/lodash/dist/lodash.js"></script>-->
+    <script src="libs/lodash.js"></script>
+
+    <!--<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>-->
+
+
+
+    <!--<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js "> </script>done-->
+    <script src="libs/angular-route.js"></script>
+
+    <!--<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>done-->
+    <script src="libs/angular-ui-router.js"></script>
+
+    <script type="text/javascript" src="libs/ng-infinite-scroll.js"></script>
+
+    <script type="text/javascript" src="app.module.js"></script>
+    <script type="text/javascript" src="app/common/ngEnter.directive.js"></script>
+    <script type="text/javascript" src="app/common/utils.js"></script>
+    <script type="text/javascript" src="app/product/backImg.directive.js"></script>
+    <script type="text/javascript" src="app/common/proxtraMessage.directive.js"></script>
+    <script type="text/javascript" src="app/common/restrictCharacters.directive.js"></script>
+    <script type="text/javascript" src="app/common/restrictedCharacters.constants.js"></script>
+    <script type="text/javascript" src="app/common/restrictSpecialChars.directive.js"></script>
+    <script type="text/javascript" src="app/common/restrictTag.directive.js"></script>
+    <script type="text/javascript" src="app/common/body.controller.js"></script>
+    <script type="text/javascript" src="app/common/data.service.js"></script>
+    <script type="text/javascript" src="app/common/appState.service.js"></script>
+
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>-->
+    <script type="text/javascript" src = "app/login/loginController.js"></script>
+    <!--<script type="text/javascript" src="app/home/home.component.js"></script>-->
+    <script type="text/javascript" src="app/common/GlobleVariavble.js"></script>
+    <script type="text/javascript" src="app/home/homeController.js"></script>
+    <script type="text/javascript" src="app/contactUs/contactUsController.js"></script>
+    <script type="text/javascript" src="app/common/a.js"></script>
+    <script type="text/javascript" src="app/common/genericService.js"></script>
+    <script type="text/javascript" src="app/product/productController.js"></script>
+    <script type="text/javascript" src="app/product/productDetailsController.js"></script>
+    <script type="text/javascript" src="app/customer/SignUpController.js"></script>
+    <script type = "text/javascript" src="app/product/addProductImageController.js"></script>
+    <script type="text/javascript" src="app/product/productDirective.js"></script>
+    <script type="text/javascript" src="app/product/partsController.js"></script>
+    <script type="text/javascript" src="app/orders/orderController.js"></script>
+    <script type="text/javascript" src="app/orders/checkoutController.js"></script>
+    <script type="text/javascript" src="app/orders/thankYouController.js"></script>
+
+
+    <title>Best mobile device deals...</title>
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="assets/css/font-awesome.css">
+
+
+    <link rel="stylesheet" href="assets/css/excellWire.css">
+    <!--<link rel="stylesheet" href="assets/css/product.css">-->
+
+    <!-- Latest compiled and minified JavaScript -->
+</head>
+<body>
+<header>
+    <div class="container-fluid">
+        <!--<div class="row top-banner">-->
+            <!--<div class="col-sm-12 col-md-12 no-padding">-->
+                <!--<img src="assets/images/R2E2m83d.png" width="100%" height="65px">-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 no-padding top-nav">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12 no-padding">
+                            <ul class="link-list">
+                                <li><img src="assets/images/flag_amer_icon.png" height="20"/></li>
+                                <li><span> My Account </span> | </li>
+                                <li><span> Register </span> | </li>
+                                <li><span>Contact Us </span> | </li>
+                                <li><span>Blog</span> | </li>
+                                <li><span>(877) 888-8888</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section ng-controller = "BodyController as bodyCtrl">
+
+    <div class="container main-content">
+        <div class="row">
+            <div class="col-md-6 no-padding"><a href="index.html"><img src="assets/images/logo.png" height="80" width="220"></a></div>
+            <div class="col-md-3 no-padding">
+                <div class="input-group search-group">
+
+                    <input id="searchBox" type="text" class="form-control search-input" typeahead="productName for productName in bodyCtrl.productNames | filter:$viewValue " typeahead-min-length ="3" placeholder="Search Device/Model" aria-describedby="basic-addon2" ng-enter = "bodyCtrl.getProducts()" ng-model = "bodyCtrl.description" >
+                    <span class="input-group-addon search-icon" id="search-button">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 no-padding" ng-controller = "a as alok">
+                <a ng-href class="site-button cart-button" ng-click = "alok.getMenu()">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <span class="badge cart-badge" ng-click = "bodyCtrl.renderOrderPage()" ng-show="GlobalVariable.isValidUser == 'true'">{{bodyCtrl.cartCount}}</span>
+                    <span class="cart-text"> Cart </span>
+                </a>
+                <a href="signIn.html" class="site-button login-button">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                    <span class="login-text" ui-sref = "login" ng-show = "GlobalVariable.isValidUser != 'true'" >SIGN IN</span>
+                    <span class="login-text" ui-sref = "home" ng-show = "GlobalVariable.isValidUser == 'true'" ng-click = "bodyCtrl.logout()">SIGN OUT</span>
+                </a>
+            </div>
+        </div>
+        <div class="row tab-row">
+            <div class="col-md-2 tab-cell">
+                <span class="tab-text" ng-if = "GlobalVariable.userRole != 'Admin' ">
+                    HOME
+                </span>
+
+                <span class="tab-text" ng-if = "GlobalVariable.userRole == 'Admin' " ui-sref = "addProductImage">
+                    ADD PRODUCT
+                </span>
+            </div>
+            <div class="col-md-2 tab-hover tab-cell"
+                 ng-mouseenter="bodyCtrl.enterTab('category', $event)"
+                 ng-mouseleave="bodyCtrl.leaveTab($event)">
+                <span class="tab-text">CATEGORY</span>
+            </div>
+            <div class="col-md-2 tab-hover tab-cell"
+                 ng-mouseenter="bodyCtrl.enterTab('brand', $event)"
+                 ng-mouseleave="bodyCtrl.leaveTab($event)">
+                <span class="tab-text">BRAND</span>
+            </div>
+            <div class="col-md-2 tab-hover tab-cell">
+                <span class="tab-text" ng-click = "bodyCtrl.getProductDetailsForParts()">PARTS </span>
+            </div>
+            <div class="col-md-2 link-hover tab-cell">
+                <a href="libslcdBuyBack.html" class="tab-text"> <span ui-sref = "lcdBuyback">LCD BUYBACK</span> </a>
+            </div>
+            <div class="col-md-2 link-hover tab-cell">
+                <a href="libscontactUs.html" class="tab-text"> <span ui-sref = "contactUs">CONTACT US</span></a>
+            </div>
+        </div>
+        <div class="row sub-menu" ng-show="bodyCtrl.showMenu" ng-mouseleave="bodyCtrl.leaveSubmenu($event)">
+            <div class="col-sm-12 col-md-12">
+                <div class="row sub-menu-1">
+                    <div class="col-sm-12 col-md-12 sub-menu-cell">
+                        <ul>
+                            <li ng-repeat="dataItem in bodyCtrl.dataList" ng-model="bodyCtrl.categoryList">
+                                <a ng-href
+                                   class="btn btn-default link-box"
+                                   ng-mouseover="bodyCtrl.subMenuButtonEnter($event)"
+                                   ng-click="bodyCtrl.getSubMenuItems(dataItem,dataItem)">{{dataItem.name}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row sub-menu-2" ng-show="bodyCtrl.showSubmenu" ng-mouseleave="bodyCtrl.leaveSubSubmenu($event)"  ng-controller = "a as alok">
+                    <div class="col-sm-12 col-md-12 sub-menu-cell">
+                        <ul>
+                            <li ng-repeat="subItem in bodyCtrl.subListData" ng-model="bodyCtrl.subListData">
+                                <a  class="btn btn-default link-box" ng-click="alok.getProduct(subItem.modelId)" >{{subItem.description}}</a>
+                                <!--<a ng-href class="btn btn-default link-box" >test link</a>-->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row outset-menu">
+
+        </div>
+    </div>
+</section>
+<div>
+    <ui-view></ui-view>
+</div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <h2>SUPPORT</h2>
+                    <hr>
+                    <ul>
+                        <li>
+                            <p>Call Us Now</p>
+                        </li>
+                        <li class="footer-top-margin">
+                            <strong>(770-703-0801)</strong>
+                        </li>
+
+                        <li class="footer-top-margin">
+                            <p>Email Us Now</p>
+                        </li>
+                        <li class="footer-top-margin">
+                            <strong>Info@Excellwireless.com</strong>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4>SHOP</h4>
+                    <hr>
+                    <ul>
+                        <li>Category</li>
+                        <li class="footer-top-margin">Brands</li>
+                        <li class="footer-top-margin">Parts</li>
+                        <li class="footer-top-margin">Lcd Buyback</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4>MY ACCOUNT</h4>
+                    <hr>
+                    <ul>
+                        <li>Sign In</li>
+                        <li class="footer-top-margin">Sign Up</li>
+                        <li class="footer-top-margin">My Cart</li>
+                        <li class="footer-top-margin">History</li>
+
+
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4>STAY IN TOUCH</h4>
+                    <hr>
+                    <form>
+                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                        <br>
+                        <button type="submit" class="btn btn-primary" style="width: 100%">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+
+</body>
+</html>

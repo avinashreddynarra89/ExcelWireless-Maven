@@ -1,0 +1,88 @@
+<div class="container" ng-controller = "OrderController as o">
+    <div class="row">
+        <div class="col-md-12">
+            <!--<div class="row" style="background-color:darkgrey">-->
+                <!--<div class="col-md-5">-->
+                <!--</div>-->
+                <!--<div class="col-md-2">-->
+                    <!--<label>Total Quantity:</label>-->
+                    <!--<label>124</label>-->
+                <!--</div>-->
+                <!--<div class="col-md-3">-->
+                    <!--<label>Total Amoun:</label>-->
+                    <!--<label>$124.00</label>-->
+                <!--</div>-->
+                <!--<div class="col-md-2">-->
+                    <!--<button ng-click = "o.continueOrder()">Continue Order</button>-->
+                <!--</div>-->
+
+            <!--</div>-->
+
+            <div type="button" class="btn btn-primary btn-lg btn-block" disabled="disabled">
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="col-md-5" style="color: white">
+                            TOTAL AMOUNT :${{o.total}}
+                        </div>
+                        <div class="col-md-5" style="color: white">
+                            TOTAL QUANTITY : {{o.totalQuantity}}
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <button ng-click = "o.continueOrder()" style="background-color: red; color: #0f0f0f">
+                            CONTINUE ORDER
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-success" ng-if="o.updateSuccess">
+                {{o.showUpdateMsg}}
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>Product-Description</th>
+                    <th>Retail</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat = "order in o.orderDto track by $index">
+
+                        <td>1</td>
+                        <td ><img ng-src="data:image/JPEG;base64,{{order.image}}" height="70px" width="70px"></td>
+                        <td>{{order.description}}</td>
+                        <td>{{order.retailPrice}}</td>
+                        <td><input type="text" data-restrict-characters="restrictCharacter.OnlyDigits.regExp" ng-value="order.quantity" ng-model = "order.quantity" ng-change="o.test1(order.quantity,$index,order.retailPrice)" class="form-control"/></td>
+                        <td>{{order.retailPrice * order.quantity}}</td>
+                        <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title" id="myModalLabel">Confirm Delete</h4>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        <a class="btn btn-danger btn-ok" ng-click = "o.removeProduct(order.productNo,$index)" data-dismiss="modal">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <td><button ng-click = "o.updateProductQuantity(order.quantity,order.productNo)" class="btn btn-warning">Update</button></td>
+                        <td><button class="btn btn-danger" data-toggle="modal" data-target="#confirm-delete" ng-click="o.invokePopup(order.productNo,$index)">Remove</button></td>
+
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

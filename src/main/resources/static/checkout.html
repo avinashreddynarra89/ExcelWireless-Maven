@@ -1,0 +1,226 @@
+
+
+<!DOCTYPE html>
+<html lang="en" ng-app="sampleApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/css/signIn.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+
+    <![endif]-->
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/jquery.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/daterangepicker.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/moment.min.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/angular.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/angular-route.js"></script>
+    <!--<script type="text/javascript" src="libs/angular-sanitize.js"></script>-->
+
+    <!--<script type="text/javascript" src="libs/textAngular.min.js"></script>-->
+    <script src='../../../../../../../.Trash/resources/static/app/assets/libs/spectrum.js'></script>
+    <script src="../../../../../../../.Trash/resources/static/app/assets/libs/angular-spectrum-colorpicker.min.js"></script><!--
+    <script src="libs/textAngular-dropdownToggle.js"></script>-->
+    <script src="../../../../../../../.Trash/resources/static/app/assets/libs/textAngular-rangy.min.js"></script>
+    <script src='../../../../../../../.Trash/resources/static/app/assets/libs/textAngular-sanitize.min.js'></script>
+    <script src="../../../../../../../.Trash/resources/static/app/assets/libs/textAngularSetup.js"></script>
+    <!--<script src='assets/libs/textAngular.min.js'></script>-->
+
+
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/angular-loader.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/angular-resource.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/angular-cookies.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/angular-aria.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/angular-animate.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/angular-ui-router.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/ui-bootstrap-tpls-0.12.0.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/ui-utils.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/ui-utils.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/angular-match-media.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/angular-messages.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/d3.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/uiswitch.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/angularPrint.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/Chart.js"></script>
+    <script type="text/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/angular-chart.js"></script>
+    <script type="application/javascript" src="../../../../../../../.Trash/resources/static/app/assets/libs/ng-infinite-scroll.js"></script>
+    <script type="text/javascript" src="assets/app.js"></script>
+    <script type="text/javascript" src="assets/controller/body.controller.js"></script>
+</head>
+<body ng-controller="BodyController as bodyCtrl">
+<section class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8"><a href="index.html"><img src="assets/images/logo.png" height="80" width="220" ></a></div>
+            <div class="col-md-2">
+                <a href="#"><label class="signin" >SIGN IN</label></a>
+            </div>
+            <div class="col-md-2">
+                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                <a href="#"><label class="signin">CART</label></a>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container" ng-mouseover="open = true" ng-mouseleave="open = false" >
+            <div class="row">
+                <div class="col-md-12 col-xs-12" style="background-color: #EEEEEE;">
+
+                    <div class="col-md-2 padding-15">
+                        <span>HOME</span>
+                    </div>
+
+                    <div class="col-md-2 testHover padding-15" >
+                        <span>CATEGORY</span>
+
+                    </div>
+
+                    <div class="col-md-2 testHover padding-15">
+                        <span>BRAND</span>
+                    </div>
+
+                    <div class="col-md-2 testHover padding-15">
+                        <span>PARTS</span>
+                    </div>
+
+                    <div class="col-md-2 padding-15">
+                        <span>LCD BUYBACK</span>
+                    </div>
+
+                    <div class="col-md-2 padding-15">
+                        <span>CONTACT US</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+</section>
+<div class="container">
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table">
+              <thead>
+              <th class="col-md-9">
+                  PRODUCT NAME
+              </th>
+              <th class="col-md-1">
+                  PRICE
+              </th>
+              <th class="col-md-1">
+                  QUANTITY
+              </th>
+              <th class="col-md-1">
+                  TOTAL
+              </th>
+              </thead>
+                <tbody>
+                <tr>
+                    <td>iPhone 4/S OEM</td>
+                    <td>$.50</td>
+                    <td>
+                        <div class="input-group">
+          <span class="input-group-btn">
+              <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
+                <span class="glyphicon glyphicon-minus"></span>
+              </button>
+          </span>
+                            <input type="text" name="quant[2]" class="form-control input-number" value="10" min="1" max="100">
+                            <span class="input-group-btn">
+              <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
+                  <span class="glyphicon glyphicon-plus"></span>
+              </button>
+          </span>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <h2>SUPPORT</h2>
+                    <hr>
+                    <ul>
+                        <li>
+                            <p>Call Us Now</p>
+                        </li>
+                        <li class="footer-top-margin">
+                            <strong>(770-703-0801)</strong>
+                        </li>
+
+                        <li class="footer-top-margin">
+                            <p>Email Us Now</p>
+                        </li>
+                        <li class="footer-top-margin" >
+                            <strong>Info@Excellwireless.com</strong>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <div class="col-md-3">
+                    <h4>SHOP</h4>
+                    <hr>
+                    <ul>
+                        <li>Category</li>
+                        <li class="footer-top-margin">Brands</li>
+                        <li class="footer-top-margin">Parts</li>
+                        <li class="footer-top-margin">Lcd Buyback</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4>MY ACCOUNT</h4>
+                    <hr>
+                    <ul>
+                        <li >Sign In</li>
+                        <li class="footer-top-margin">Sign Up</li>
+                        <li class="footer-top-margin">My Cart</li>
+                        <li class="footer-top-margin">History</li>
+
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4>STAY IN TOUCH</h4>
+                    <hr>
+                    <form>
+                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                        <br>
+                        <button type="submit" class="btn btn-primary" style="width: 100%">Subscribe</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+
+
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+</body>
+</html>

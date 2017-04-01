@@ -1,0 +1,18 @@
+
+<div class="container" ng-controller = "CategoryProductController as test1">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-3" ng-repeat = "product in test1.productDto">
+                <div>
+                    <img ng-src="data:image/JPEG;base64,{{product.image}}" ng-click = "test1.getProductDetails(product)" class= "img-responsive"  > 
+                </div>
+                <h3  class="product-description">{{product.description}}</h3>
+                <h3  ng-show = "test1.user" class="product-price">{{product.retailPrice}}</h3>
+                <div class="input-group center">
+                    <input ng-show = "test1.user" type="text" class="form-control"  placeholder="Quantity" ng-model="test1.countNumber[$index]" />
+                    <button ng-show = "test1.user" type="button" class="btn btn-primary" ng-click="test1.updateCartCount(test1.countNumber[$index],product)">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="container" ng-controller = "ProductDetailsController as productDetails">
+    <div class="row">
+        <!--start of product details image div view-->
+        <div class="col-md-6">
+
+            <!--<img src="../../assets/images/IPH_6_4_7_TPPCAG_SD0114_1_5247667688023295897_big.jpg" class="img-responsive">-->
+            <img ng-src="data:image/JPEG;base64,{{productDetails.a.image}}" class="img-responsive">
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-3 col-xs-2">
+                        <img ng-src="data:image/JPEG;base64,{{productDetails.a.image}}" class="img-rounded product-small-icon img-responsive" >
+                    </div>
+                    <div class="col-md-3 ">
+                        <img ng-src="data:image/JPEG;base64,{{productDetails.a.image}}" class="img-rounded product-small-icon img-responsive" >
+                    </div>
+                    <div class="col-md-3 ">
+                        <img ng-src="data:image/JPEG;base64,{{productDetails.a.image}}" class="img-rounded product-small-icon img-responsive" >
+                    </div>
+                    <div class="col-md-3 ">
+                        <img ng-src="data:image/JPEG;base64,{{productDetails.a.image}}" class="img-rounded product-small-icon img-responsive" >
+                    </div>
+                </div>
+
+            </div>
+            <!--end of product details image div view-->
+        </div>
+        <!--start of product details description view-->
+        <div class="col-md-6">
+            <!--start of product details image row-->
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{{productDetails.a.description}}</h1>
+                    <h1 ng-show = "productDetails.user">${{productDetails.a.retailPrice}}</h1>
+                    <h3   ng-show = "productDetails.a.quantity <= 0 " style="color: red;">
+                        Out of stock
+                    </h3>
+
+                    <h2>SKU : {{productDetails.a.productNo}}</h2>
+                    <hr>
+                    <!--end of product details image row-->
+                </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div ng-show = "productDetails.user"><label>Quantity</label></div>
+                        <input ng-show = "productDetails.user" type="text" class="form-control" placeholder="Please add product quantity" ng-model="productDetails.countNumber[$index]" data-restrict-characters="restrictCharacter.OnlyDigits.regExp" style=" width: 265px;height: 45px;">
+                        <hr>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <button ng-show = "productDetails.user" type="button" class="btn btn-primary btn-lg btn-block" ng-click="productDetails.updateCartCountParts(productDetails.countNumber[$index],productDetails.a)">Add To Cart</button>
+
+                </div>
+            </div>
+
+            </div>
+            <!--end of product details description view-->
+        </div>
+    </div>
+
+

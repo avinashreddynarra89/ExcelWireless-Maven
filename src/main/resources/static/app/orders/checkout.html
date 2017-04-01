@@ -1,0 +1,100 @@
+<div class="container" ng-controller = "CheckoutController as checkout">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-9"><!--this order details div -->
+                <div align="center">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" disabled="disabled">
+                        ORDER DETAILS
+                    </button>
+
+
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Product-Description</th>
+                            <th>Retail</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat = "order in checkout.orderDto track by $index">
+                            <td>1</td>
+                            <td>{{order.description}}</td>
+                            <td>{{order.retailPrice}}</td>
+                            <td> {{order.quantity}}</td>
+                            <td>{{order.retailPrice * order.quantity}}</td>
+                        </tr>
+                        </tbody>
+                        </table>
+                </div>
+            </div>
+            <div class="col-md-3"><!--this shipping address div -->
+                <div class="btn btn-primary btn-lg btn-block" disabled="disabled">
+                    SHIPPING INFORMATION
+                </div>
+                <div class="checkoutDiv">
+                    <span><h2 align="center">{{checkout.firstName}} {{checkout.lastName}}</h2></span>
+                    <span><h3 align="center">{{checkout.companyName}}</h3></span>
+                    <span><h4 align="center">{{checkout.street}}</h4></span>
+                    <span><h4 align="center">{{checkout.city}}, {{checkout.state}}, {{checkout.zipcode}}</h4></span>
+                    <!--<span><h4 align="center">Fax:{{checkout.fax}}</h4></span>-->
+                    <span><h4 align="center">Phone:{{checkout.phoneNo}}</h4></span>
+                    <span><h4 align="center">{{checkout.country}}</h4></span>
+                </div>
+                <button type="button" class="btn btn-primary btn-lg btn-block">
+                    ORDER SUMMARY
+                </button>
+
+                <div class="checkoutDiv">
+                        <table style="border-collapse: collapse">
+                            <tbody>
+                                <tr>
+                                    <td><h5>Items:</h5></td>
+                                    <td><h5>{{checkout.checkoutQuantity}}</h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5>Items Total:</h5></td>
+                                    <td><h5>${{checkout.checkoutTotal}}</h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5>Shipping & Handling:</h5></td>
+                                    <td><h5>$XXXXX</h5></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"> <hr style="margin-left: 10px;"></td>
+                                </tr>
+                                <tr>
+                                    <td><h4>Order Total:</h4></td>
+                                    <td><h4>${{checkout.checkoutTotal}}</h4></td>
+                                </tr>
+                            </tbody>
+                            </table>
+                    </div>
+
+                <div class="modal fade" id="confirm-order" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Are You Sure For Conform This Order</h4>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">CANCEL</button>
+                                <a class="btn btn-danger btn-ok" ng-click = "checkout.finalCheckout(checkout.orderDto)" data-dismiss="modal">YES</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                    <button type="button" data-toggle="modal" data-target="#confirm-order" class=" btn btn-primary btn-lg btn-block" style="background-color: goldenrod;" >
+                        PLACE YOUR ORDER
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
