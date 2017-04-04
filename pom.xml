@@ -22,6 +22,16 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+
+			<!-- INSTANCE_CONNECTION_NAME from Cloud Console > SQL > Instance Details > Properties
+                 or gcloud sql instances describe <instance>
+                 project:region:instance for Cloud SQL 2nd Generation or
+                 project:instance        for Cloud SQL 1st Generation
+            -->
+			<!--<INSTANCE_CONNECTION_NAME></INSTANCE_CONNECTION_NAME>-->
+			<!--<user>root</user>-->
+			<!--<password>myPassword</password>-->
+			<!--<database>sqldemo</database>-->
 	</properties>
 
 	<dependencies>
