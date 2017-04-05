@@ -7,7 +7,7 @@
     function dataService($http, $log) {
         var service = {}, cache = false, vm = this;
         //vm.domain = 'https://excelwireless.cfapps.io';
-        vm.domain = 'http://localhost:8080';
+        vm.domain = 'https://firstproject-159400.appspot.com/';
         vm.port = '';
         vm.defaultMethodPath = '/getWebMenu';
 
