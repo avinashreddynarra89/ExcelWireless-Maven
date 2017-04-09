@@ -172,7 +172,7 @@ public class SQLQueries {
             " RETAIL_PRICE," +
             " IMAGE," +
             " QUANTITY " +
-            " FROM product where ACTIVE_FLAG = 1 AND CATEGORY_ID = ?";
+            " FROM product where ACTIVE_FLAG = 1 AND CATEGORY_ID = 6";
 
     public String getProductDetailsByModelId = "SELECT " +
             "PRODUCT_NO," +
