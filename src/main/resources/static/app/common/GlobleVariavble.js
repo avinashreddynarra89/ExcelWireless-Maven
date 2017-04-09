@@ -16,7 +16,7 @@
          globalVar.lineItemDto = '';
          globalVar.productBtCategory = '';
          globalVar.items = [];
-         globalVar.URLCONSTANT = 'https://8080-dot-2267412-dot-devshell.appspot.com'  //http://localhost:8080/';
+         globalVar.URLCONSTANT = 'http://localhost:8080/';//'https://8080-dot-2267412-dot-devshell.appspot.com'
          globalVar.customerPhoneNo = '';
          globalVar.productForSearch = '';
          globalVar.isValidUser = 'false';

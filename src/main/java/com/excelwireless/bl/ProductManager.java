@@ -140,7 +140,7 @@ public class ProductManager {
 //
            int blobLength = (int)rs.getBlob("IMAGE").length();
 
-            //product.setProductId(rs.getInt("PRODUCT_ID"));
+            product.setProductId(rs.getInt("PRODUCT_ID"));
             product.setProductNo(rs.getString("PRODUCT_NO"));
             product.setDescription(rs.getString("DESCRIPTION"));
             product.setCategoryId(rs.getInt("CATEGORY_ID"));

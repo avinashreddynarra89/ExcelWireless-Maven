@@ -100,6 +100,7 @@ public class SQLQueries {
     //SQL QUERY TO GET  DETAILS FROM DATABASE
 
     public String getProductDetails = "SELECT " +
+            "PRODUCT_ID," +
             "PRODUCT_NO," +
             "CATEGORY_ID," +
             "VENDOR_ID," +
