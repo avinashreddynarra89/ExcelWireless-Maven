@@ -77,23 +77,23 @@ SQLQueries sqlQueries;
 
 //            int blobLength = 0;
 //
-                //int blobLength = (int)rs.getBlob("IMAGE").length();
 
-                product.setProductId(rs.getInt(1));
-                product.setProductNo(rs.getString(2));
-//                product.setDescription(rs.getString("DESCRIPTION"));
-//                product.setCategoryId(rs.getInt("CATEGORY_ID"));
-//                product.setModelId(rs.getInt("MODEL_ID"));
-//                product.setVendorId(rs.getInt("VENDOR_ID"));
-//                product.setBrandId(rs.getInt("BRAND_ID"));
-//                product.setCostPrice(rs.getDouble("COST_PRICE"));
-//                product.setRetailPrice(rs.getDouble("RETAIL_PRICE"));
-//                product.setQuantity(rs.getInt("QUANTITY"));
+               // product.setProductId(rs.getInt(1));
+                product.setProductNo(rs.getString(1));
+                product.setCategoryId(rs.getInt(2));
+                product.setVendorId(rs.getInt(3));
+                product.setBrandId(rs.getInt(4));
+                product.setModelId(rs.getInt(5));
+                product.setDescription(rs.getString(6));
+                product.setCostPrice(rs.getDouble(7));
+                product.setRetailPrice(rs.getDouble(8));
+                product.setQuantity(rs.getInt(10));
 //                // product.setAddTax(rs.getBoolean("TAX"));
-//
-//                if(blobLength != 0) {
-//                    product.setImage(rs.getBlob("IMAGE").getBytes(1, blobLength));
-//                }
+                int blobLength = (int)rs.getBlob(9).length();
+
+                if(blobLength != 0) {
+                    product.setImage(rs.getBlob(9).getBytes(1, blobLength));
+                }
 
                 productList.add(product);
             }
