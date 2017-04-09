@@ -45,38 +45,7 @@ public class UserManager {
 
         UserLogin userLogin = new UserLogin();
         boolean response = false;
-        try
-        {
-           // customerDto = jdbcTemplate.queryForObject(sqlQuery.getCustomerDetailsForLogin, new UserManager.CustomerLoginAndAddMapper(),username);
 
-                if(null != customerDto && customerDto.getEmail().equalsIgnoreCase(username) && customerDto.getPassword().equals(password))
-                {
-                    userLogin.setPhoneNo(customerDto.getPhoneNo());
-                    userLogin.setValidUser(true);
-                    userLogin.setStreet(customerDto.getStreet());
-                    userLogin.setCity(customerDto.getCity());
-                    userLogin.setState(customerDto.getState());
-                    userLogin.setZipcode(customerDto.getZipcode());
-                    userLogin.setCountry(customerDto.getCountry());
-                    userLogin.setFax(customerDto.getFax());
-                    userLogin.setCompanyName(customerDto.getCompanyName());
-                    userLogin.setFirstName(customerDto.getFirstName());
-                    userLogin.setLastName(customerDto.getLastName());
-                    userLogin.setUserRole("Customer");
-
-                    System.out.println("Send customer information successfully");
-                }
-                else
-                {
-                    userLogin.setValidUser(false);
-                }
-        }
-        catch (Exception e)
-        {
-            //Here i am checking when customer login credentials failed i am checking for the admin and if admin then showing admin view.
-            //Because i am doing query for object and its throwing no result found exception
-
-           // userDto = jdbcTemplate.queryForObject(sqlQuery.getUserDetails, new UserManager.UserLoginMapper(),username);
 
             String envDetails = environment.getProperty("env.instances");
 
@@ -109,11 +78,74 @@ public class UserManager {
                 userLogin.setUserRole(userDto.getUserRole());
                 userLogin.setValidUser(true);
             }
-            System.out.println(e);
-        }
 
         return userLogin;
-    }
+        }
+           // customerDto = jdbcTemplate.queryForObject(sqlQuery.getCustomerDetailsForLogin, new UserManager.CustomerLoginAndAddMapper(),username);
+
+//                if(null != customerDto && customerDto.getEmail().equalsIgnoreCase(username) && customerDto.getPassword().equals(password))
+//                {
+//                    userLogin.setPhoneNo(customerDto.getPhoneNo());
+//                    userLogin.setValidUser(true);
+//                    userLogin.setStreet(customerDto.getStreet());
+//                    userLogin.setCity(customerDto.getCity());
+//                    userLogin.setState(customerDto.getState());
+//                    userLogin.setZipcode(customerDto.getZipcode());
+//                    userLogin.setCountry(customerDto.getCountry());
+//                    userLogin.setFax(customerDto.getFax());
+//                    userLogin.setCompanyName(customerDto.getCompanyName());
+//                    userLogin.setFirstName(customerDto.getFirstName());
+//                    userLogin.setLastName(customerDto.getLastName());
+//                    userLogin.setUserRole("Customer");
+//
+//                    System.out.println("Send customer information successfully");
+//                }
+//                else
+//                {
+//                    userLogin.setValidUser(false);
+//                }
+
+            //Here i am checking when customer login credentials failed i am checking for the admin and if admin then showing admin view.
+            //Because i am doing query for object and its throwing no result found exception
+
+           // userDto = jdbcTemplate.queryForObject(sqlQuery.getUserDetails, new UserManager.UserLoginMapper(),username);
+
+//            String envDetails = environment.getProperty("env.instances");
+//
+//            List<ProductEcomerceDto> productList = new ArrayList<>();
+//
+//            Connection connection = null;
+//
+//            PreparedStatement preparedStatement = null;
+//
+//            ResultSet rs = null;
+//
+//            connection = connectionManager.getConnection(envDetails+".envmonitor.driver",envDetails+".envmonitor.url",envDetails+".envmonitor.username",envDetails+".envmonitor.password");
+//
+//            preparedStatement = connection.prepareStatement(sqlQuery.getUserDetails);
+//
+//            rs = preparedStatement.executeQuery();
+//
+//            UserDto userDto = new UserDto();
+//
+//            while (rs.next())
+//            {
+//                userDto.setUsername(rs.getString(1));
+//                userDto.setPassword(rs.getString(2));
+//                userDto.setUserRole(rs.getString(3));
+//            }
+//
+//
+//            if(null != userDto && userDto.getUsername().equalsIgnoreCase(username) && userDto.getPassword().equals(password))
+//            {
+//                userLogin.setUserRole(userDto.getUserRole());
+//                userLogin.setValidUser(true);
+//            }
+//            System.out.println(e);
+//        }
+//
+//        return userLogin;
+
 
     private static final class CustomerLoginAndAddMapper implements RowMapper<CustomerDto>
     {
