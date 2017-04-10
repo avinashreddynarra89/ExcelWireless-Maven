@@ -100,6 +100,7 @@ public class SQLQueries {
     //SQL QUERY TO GET  DETAILS FROM DATABASE
 
     public String getProductDetails = "SELECT " +
+            "PRODUCT_ID," +
             "PRODUCT_NO," +
             "CATEGORY_ID," +
             "VENDOR_ID," +
@@ -125,7 +126,7 @@ public class SQLQueries {
 
     public String getCustomerDetailsForLogin = "SELECT PHONE_NO,EMAIL,PASSWORD,STREET,CITY,STATE,COUNTRY,ZIPCODE,FAX,COMPANY_NAME,FIRST_NAME,LAST_NAME FROM customer where EMAIL = ?";
 
-    public String getUserDetails = "SELECT USERNAME,PASSWORD,USER_ROLE FROM user where USERNAME = ? ";
+    public String getUserDetails = "SELECT USERNAME,PASSWORD,USER_ROLE FROM user where USERNAME = 'alok' ";
 
 
     //SQL QUERY TO DELETE FROM DATABASE
@@ -171,7 +172,7 @@ public class SQLQueries {
             " RETAIL_PRICE," +
             " IMAGE," +
             " QUANTITY " +
-            " FROM product where ACTIVE_FLAG = 1 AND CATEGORY_ID = ?";
+            " FROM product where ACTIVE_FLAG = 1 AND CATEGORY_ID = 6";
 
     public String getProductDetailsByModelId = "SELECT " +
             "PRODUCT_NO," +
