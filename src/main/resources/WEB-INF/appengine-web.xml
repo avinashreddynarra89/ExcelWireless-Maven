@@ -1,0 +1,8 @@
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+    <threadsafe>true</threadsafe>
+    <use-google-connector-j>true</use-google-connector-j>
+    <system-properties>
+        <property name="ae-cloudsql.cloudsql-database-url" value="jdbc:google:mysql://firstproject-159400:us-central1:pos-db-1/pointofsale?user=root&amp;password=root" />
+        <!--<property name="ae-cloudsql.local-database-url" value="jdbc:mysql://google/pointofsale?cloudSqlInstance=firstproject-159400:us-central1:pos-db-1&amp;socketFactory=com.google.cloud.sql.mysql.SocketFactory&amp;user=root&amp;password=root&amp;useSSL=false" />-->
+    </system-properties>
+</appengine-web-app>
