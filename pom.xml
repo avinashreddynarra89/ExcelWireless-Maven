@@ -56,11 +56,11 @@
 			<!--<version>6.0.5</version>-->
 		<!--</dependency>-->
 
-		<dependency>
-			<groupId>com.google.cloud.sql</groupId>
-			<artifactId>mysql-socket-factory-connector-j-6</artifactId>
-			<version>1.0.2</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>com.google.cloud.sql</groupId>-->
+			<!--<artifactId>mysql-socket-factory-connector-j-6</artifactId>-->
+			<!--<version>1.0.2</version>-->
+		<!--</dependency>-->
 
 		<dependency>
 			<groupId>com.google.cloud.sql</groupId>
