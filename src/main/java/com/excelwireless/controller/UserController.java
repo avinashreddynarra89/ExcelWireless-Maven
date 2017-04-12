@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 @RestController
 @RequestMapping("")
-@CrossOrigin(origins = "https://firstproject-159400.appspot.com")
+@CrossOrigin(origins = {"*"})
 public class UserController {
 
     @Autowired

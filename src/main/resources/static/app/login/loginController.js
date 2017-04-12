@@ -44,7 +44,7 @@
             util.customError.hide(['username','password']);
           if(vm.validations())
           {
-              $http.get(GlobalVariable.URLCONSTANT+'getUserLoginDetails?username=' + username + '&password=' + password).then(function (response) {
+              $http.get('https://firstproject-159400.appspot.com/'+'getUserLoginDetails?username=' + username + '&password=' + password).then(function (response) {
 
                   userDetail = response.data;
 
