@@ -76,7 +76,7 @@
             sessionStorage.orderDetails = JSON.stringify(product1);
             $rootScope.$emit('updateCount', value);
 
-            StoreService.postData(GlobalVariable.URLCONSTANT + "addTransactionLineItem", product, "application/json", "application/json").then(function (response) {
+            StoreService.postData(GlobalVariable.URLCONSTANT+"addTransactionLineItem", product, "application/json", "application/json").then(function (response) {
                     var data = response.data;
 
                     console.log("response data", data);
@@ -94,7 +94,7 @@
 
 
             //call to get the price of the product by customer
-            StoreService.getData(GlobalVariable.URLCONSTANT + 'getProductPriceByCustomer?phoneNo='+sessionStorage.customerPhoneNo).then(
+            StoreService.getData(GlobalVariable.URLCONSTANT+'getProductPriceByCustomer?phoneNo='+sessionStorage.customerPhoneNo).then(
                 function (success) {
                     // console.log(success.data)
 
@@ -105,7 +105,7 @@
                 });
 
             //Call to get all parts product
-            StoreService.getData(GlobalVariable.URLCONSTANT + 'getProductsByCategory?category_Id=6').then(
+            StoreService.getData(GlobalVariable.URLCONSTANT+'getProductsByCategory?category_Id=6').then(
                 function (success) {
                     // console.log(success.data)
                     //var i = 0;
@@ -134,7 +134,7 @@
                     console.log("getReplenishmentInfo call failed");
                 });
 
-            StoreService.getData(GlobalVariable.URLCONSTANT + 'getSideBardForParts').then(
+            StoreService.getData(GlobalVariable.URLCONSTANT+'getSideBardForParts').then(
                 function (success) {
                     // console.log(success.data)
                     $scope.items = success.data;

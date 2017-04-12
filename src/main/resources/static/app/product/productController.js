@@ -49,7 +49,7 @@
             vm.user =  sessionStorage.validUser;
             console.log("is valid user"+ vm.user);
 
-            StoreService.getData(GlobalVariable.URLCONSTANT + 'getSideBardForParts').then(
+            StoreService.getData(GlobalVariable.URLCONSTANT+'getSideBardForParts').then(
                 function (success) {
                     // console.log(success.data)
                     $scope.items = success.data;
@@ -80,7 +80,7 @@
             sessionStorage.orderDetails = JSON.stringify(a);
             $rootScope.$emit('updateCount',value);
 
-            StoreService.postData(GlobalVariable.URLCONSTANT + "addTransactionLineItem", product, "application/json", "application/json").then(function (response) {
+            StoreService.postData(GlobalVariable.URLCONSTANT+'addTransactionLineItem', product, "application/json", "application/json").then(function (response) {
                     var data = response.data;
 
                     console.log("response data", data);

@@ -28,7 +28,7 @@
             //sessionStorage.orderDetails = JSON.stringify(a);
             $rootScope.$emit('updateCount', value);
 
-            StoreService.postData(GlobalVariable.URLCONSTANT + "addTransactionLineItem", product, "application/json", "application/json").then(function (response) {
+            StoreService.postData(GlobalVariable.URLCONSTANT+"addTransactionLineItem", product, "application/json", "application/json").then(function (response) {
                     var data = response.data;
 
                     console.log("response data", data);

@@ -1,0 +1,7 @@
+applications:
+- name: ExWireless
+  memory: 512M
+  instances: 1
+  path: /Users/apatel2/Downloads/ExcelWireless-Maven/target/ExcelWireless-Maven-0.0.1-SNAPSHOT.jar
+  diego: true
+  host: exwireless

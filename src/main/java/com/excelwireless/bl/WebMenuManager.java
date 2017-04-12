@@ -34,7 +34,7 @@ public class WebMenuManager {
         List<BrandDto> brandDtos;
         List<ModelDto> modelDtoList;
 
-        List<WebBrandDto> webBrandDtoList = new ArrayList<>();
+        List<WebBrandDto> webBrandDtoList = new ArrayList<WebBrandDto>();
 
 
         //Getting all the category from table
@@ -73,7 +73,7 @@ public class WebMenuManager {
 
     private List<ModelDto> getModelListForBrand(int brandId) {
 
-        List<ModelDto> modelDtoListGlobal = new ArrayList<>();
+        List<ModelDto> modelDtoListGlobal = new ArrayList<ModelDto>();
 
         List<Integer> modelNos;
 
@@ -107,9 +107,9 @@ public class WebMenuManager {
 
     public List<WebBrandDto> getSideBardForParts() {
 
-        List<BrandDto> brandDtoList = new ArrayList<>();
-        List<ModelDto> modelDtoList = new ArrayList<>();
-        List<WebBrandDto> webBrandDtoList = new ArrayList<>();
+        List<BrandDto> brandDtoList = new ArrayList<BrandDto>();
+        List<ModelDto> modelDtoList = new ArrayList<ModelDto>();
+        List<WebBrandDto> webBrandDtoList = new ArrayList<WebBrandDto>();
 
         brandDtoList = jdbcTemplate.query(sqlQueries.getBrandDetailsForParts,new WebBrandMapper());
 
