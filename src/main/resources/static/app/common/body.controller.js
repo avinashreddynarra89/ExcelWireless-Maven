@@ -273,6 +273,19 @@
             console.log(vm.cartCount+"session" +sessionStorage.totalQuantity);
 
         //     vm.productMethods.getProdByCatId(12).then(success, error);
+
+           vm.service.callGenericMethod('/getProduct', 'GET', {}).then(
+                        function success(response) {
+
+                        log.info("Product" + response.data);
+
+                            } else {
+                                $log.$error("Category response is missing the categoryDtoList.  Unable to process request.", response);
+                            }
+
+                        }
+                    );
+
          }
         render();
     }
