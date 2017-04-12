@@ -9,7 +9,7 @@
         //vm.domain = 'https://excelwireless.cfapps.io';
         vm.domain = 'https://firstproject-159400.appspot.com/';
         vm.port = '';
-        vm.defaultMethodPath = '/getWebMenu';
+        vm.defaultMethodPath = 'getWebMenu';
 
         service.callGenericMethod = function (methodPath, methodType, data, headers, successCallback, errorCallback) {
             var _headers = headers ? headers : {"Content-Type": "application/json"},

@@ -243,7 +243,7 @@
 
             GlobalVariable.isValidUser =  sessionStorage.validUser;
             GlobalVariable.userRole = sessionStorage.userRole;
-            vm.service.callGenericMethod('/getWebMenu', 'GET', {}).then(
+            vm.service.callGenericMethod('getWebMenu', 'GET', {}).then(
                 function success(response) {
                     if (response.data &&
                         response.data.categoryDtoList &&
@@ -274,7 +274,7 @@
 
         //     vm.productMethods.getProdByCatId(12).then(success, error);
 
-           vm.service.callGenericMethod('/getProduct', 'GET', {}).then(
+           vm.service.callGenericMethod('getProduct', 'GET', {}).then(
                         function success(response) {
 
                         log.info("Product" + response.data);
