@@ -44,7 +44,7 @@
             util.customError.hide(['username','password']);
           if(vm.validations())
           {
-              $http.get('https://firstproject-159400.appspot.com/'+'getUserLoginDetails?username=' + username + '&password=' + password).then(function (response) {
+              $http.get(GlobalVariable.URLCONSTANT+'getUserLoginDetails?username='+username+'&password='+password).then(function (response) {
 
                   userDetail = response.data;
 
@@ -52,16 +52,16 @@
                   {
                       sessionStorage.validUser = true;
                       sessionStorage.customerPhoneNo = userDetail.phoneNo;
-                      sessionStorage.street = userDetail.street;
-                      sessionStorage.city = userDetail.city;
-                      sessionStorage.state = userDetail.state;
-                      sessionStorage.country = userDetail.country;
-                      sessionStorage.zipcode = userDetail.zipcode;
-                      sessionStorage.fax = userDetail.fax;
-                      sessionStorage.email = userDetail.email;
-                      sessionStorage.firstName = userDetail.firstName;
-                      sessionStorage.lastName = userDetail.lastName;
-                      sessionStorage.companyName = userDetail.companyName;
+//                      sessionStorage.street = userDetail.street;
+//                      sessionStorage.city = userDetail.city;
+//                      sessionStorage.state = userDetail.state;
+//                      sessionStorage.country = userDetail.country;
+//                      sessionStorage.zipcode = userDetail.zipcode;
+//                      sessionStorage.fax = userDetail.fax;
+//                      sessionStorage.email = userDetail.email;
+//                      sessionStorage.firstName = userDetail.firstName;
+//                      sessionStorage.lastName = userDetail.lastName;
+//                      sessionStorage.companyName = userDetail.companyName;
                       sessionStorage.userRole = userDetail.userRole;
                       $rootScope.$emit('setTypeOfUser',userDetail.userRole);
                       vm.getOrderDetails(userDetail.phoneNo);
