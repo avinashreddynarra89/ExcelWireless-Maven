@@ -163,6 +163,7 @@ public class SQLQueries {
 
     public String getProductDetailsByCategoryId = "SELECT " +
             " PRODUCT_NO," +
+            "PRODUCT_ID," +
             " CATEGORY_ID," +
             " VENDOR_ID," +
             " BRAND_ID," +
