@@ -16,9 +16,9 @@
          globalVar.lineItemDto = '';
          globalVar.productBtCategory = '';
          globalVar.items = [];
-//         globalVar.URLCONSTANT = 'https://firstproject-159400.appspot.com/'
+         globalVar.URLCONSTANT = 'https://firstproject-159400.appspot.com/'
 //       globalVar.URLCONSTANT = 'http://localhost:8080/';
-         globalVar.URLCONSTANT = 'https://exwireless.cfapps.io/';
+//         globalVar.URLCONSTANT = 'https://exwireless.cfapps.io/';
          globalVar.customerPhoneNo = '';
          globalVar.productForSearch = '';
          globalVar.isValidUser = 'false';
