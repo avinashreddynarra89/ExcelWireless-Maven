@@ -6,32 +6,6 @@
 
     function getPartsProduct(GlobalVariable, StoreService, $state, AppState,$rootScope,$log, $scope,restrictCharacter) {
 
-        // $scope.items = [
-        //     {
-        //         "brandId": 1,
-        //         "brandName": "EX",
-        //         "modelDtoList": [
-        //             {
-        //                 "modelId": 1,
-        //                 "modelName": "test",
-        //                 "description": null,
-        //                 "noOfProducts": 0
-        //             }
-        //         ]
-        //     },
-        //     {
-        //         "brandId": 2,
-        //         "brandName": "MYBAT",
-        //         "modelDtoList": []
-        //     },
-        //     {
-        //         "brandId": 3,
-        //         "brandName": "MERCURY",
-        //         "modelDtoList": []
-        //     }
-        // ];
-
-
         var vm = this;
 
         vm.productDto = {};

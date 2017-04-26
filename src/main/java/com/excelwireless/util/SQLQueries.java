@@ -112,9 +112,9 @@ public class SQLQueries {
             "QUANTITY," +
             "IMAGE " +
           //  "TAX," +
-            "FROM product where ACTIVE_FLAG = 1";
+            "FROM product where ACTIVE_FLAG = 1 AND IS_ECOMMERCE = 1";
 
-    public String getModelDetails = "SELECT * FROM PRODUCT_MODEL WHERE ID = ? AND ID <> 'NULL' ";
+    public String getModelDetails = "SELECT * FROM product_model WHERE ID = ? AND ID <> 'NULL' ";
 
    // ORDER BY DESCRIPTION
 
@@ -163,7 +163,7 @@ public class SQLQueries {
 
     public String getProductDetailsByCategoryId = "SELECT " +
             " PRODUCT_NO," +
-            "PRODUCT_ID," +
+            " PRODUCT_ID," +
             " CATEGORY_ID," +
             " VENDOR_ID," +
             " BRAND_ID," +
@@ -173,9 +173,10 @@ public class SQLQueries {
             " RETAIL_PRICE," +
             " IMAGE," +
             " QUANTITY " +
-            " FROM product where ACTIVE_FLAG = 1 AND CATEGORY_ID = ?";
+            " FROM product WHERE ACTIVE_FLAG = 1 AND IS_ECOMMERCE = 1 AND CATEGORY_ID = ?  ORDER BY MODEL_ID ASC ";
 
     public String getProductDetailsByModelId = "SELECT " +
+            "PRODUCT_ID," +
             "PRODUCT_NO," +
             "CATEGORY_ID," +
             "VENDOR_ID," +
@@ -187,7 +188,7 @@ public class SQLQueries {
             ",QUANTITY," +
             "IMAGE" +
             //"TAX" +
-            "FROM product WHERE MODEL_ID = ? AND ACTIVE_FLAG = 1";
+            " FROM product WHERE MODEL_ID = ? AND ACTIVE_FLAG = 1 AND IS_ECOMMERCE = 1";
     public String updateProductImage = "UPDATE product SET IMAGE = ? WHERE PRODUCT_ID = ?";
     public String getBrandDetailsForParts = "SELECT distinct p.BRAND_ID, b.BRAND_NAME FROM product p JOIN brand b on p.BRAND_ID = b.BRAND_ID where p.CATEGORY_ID = 14";
     public String addSingleTransactionLineItem = "INSERT INTO web_transaction_line_item ("+
@@ -239,7 +240,7 @@ public class SQLQueries {
                     "FIRST_NAME_LAST_NAME," +
                     "USERNAME) VALUES (?,?,?,?,?,?,?,?,'3',?,?,?,?,?,'asif')";
 
-    public String getProductForSearch = "SELECT PRODUCT_NO,DESCRIPTION,CATEGORY_ID,BRAND_ID,MODEL_ID FROM product where ACTIVE_FLAG = 1 ";
+    public String getProductForSearch = "SELECT PRODUCT_NO,DESCRIPTION,CATEGORY_ID,BRAND_ID,MODEL_ID FROM product where ACTIVE_FLAG = 1 AND IS_ECOMMERCE = 1";
     public String getProductsByDescription = "SELECT " +
             "PRODUCT_NO," +
             "CATEGORY_ID," +
@@ -252,7 +253,7 @@ public class SQLQueries {
             "QUANTITY," +
             "IMAGE " +
             "FROM product " +
-            "WHERE MODEL_ID = " +
+            "WHERE ACTIVE_FLAG = 1 AND IS_ECOMMERCE = 1 AND MODEL_ID = " +
             "(SELECT MODEL_ID FROM product " +
             " WHERE DESCRIPTION = ?)";
     public String deleteAllTransactionLineItem = "DELETE FROM web_transaction_line_item WHERE CUSTOMER_PHONENO = ?";

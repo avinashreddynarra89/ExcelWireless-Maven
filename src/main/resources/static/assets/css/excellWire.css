@@ -369,11 +369,9 @@ text-align: center;
 }
 
 .carousel-image-1 {
-   background-image: url("../images/DSC_4663.jpg");
 }
 
 .carousel-image-2 {
-   background-image: url("../images/011.jpg");
 }
 .checkoutDiv
 {
@@ -582,3 +580,50 @@ input.parsley-error,select.parsley-error,textarea.parsley-error {
     url('fontAwesome-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
     url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 }}
+
+
+.inner-box {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 3px 3px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 1px 1px rgba(180,180,180,0.5);
+    margin-bottom: 30px;
+    padding: 20px 15px;
+}
+bootstrap.css [sm]:1
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+
+/*This CSS for sign up page*/
+.title-2 {
+    border-bottom: 1px solid #e6e6e6;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+p.required, .required sup {
+    color: #e74c3c;
+}
+.form-horizontal .control-label {
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.promo-text-box {
+    padding: 15px 20px;
+}

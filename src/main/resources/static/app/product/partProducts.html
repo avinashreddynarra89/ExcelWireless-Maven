@@ -21,22 +21,23 @@
                     <div class="content">
                     </div>
                 </div>
+            <form name="form">
             <div class="col-md-2" ng-repeat = "product in p.productDto | limitTo:p.barLimit" style="height:300px;">
 
                 <div  class= "img-responsive">
                     <img ng-src="data:image/JPEG;base64,{{product.image}}" ng-click = "p.getProductDetails(product)" style="cursor: pointer;"> 
                 </div>
-                <div ng-if="GlobalVariable.isValidUser == 'true'">
                 <div style="text-align: center;padding-bottom:10px;"><span class="product-description">{{product.description}}</span></div>
+                <div ng-if="GlobalVariable.isValidUser == 'true'">
                 <div ng-show = "p.user" style="padding-bottom:10px;text-align: center;"><span  class="product-price">${{product.retailPrice}}</span></div>
 
 
                 <div   ng-show = "product.quantity > 0 " style="padding-bottom:10px;">
                     <div class="col-md-6" style="width: 30%;padding: 0px;">
-                     <input ng-show = "p.user" type="text" class="form-control"  placeholder="Qty" ng-model="p.countNumber[$index]" data-restrict-characters="restrictCharacter.OnlyDigits.regExp" style="height: 30px"/>
+                     <input ng-show = "p.user" type="text" class="form-control" placeholder="Qty" ng-model="p.countNumber[$index]" data-restrict-characters="restrictCharacter.OnlyDigits.regExp" style="height: 30px"/>
                         </div>
                     <div class="col-md-6" style="padding-left: 4px;width: 70%;">
-                    <button style="width: 68px;font-size:9px;height: 30px;" ng-show = "p.user" type="button" class="btn-primary" ng-click="p.updateCartCountParts(p.countNumber[$index],product)">Add To Cart</button>
+                    <button style="width: 68px;font-size:9px;height: 30px;" ng-show = "p.user" type="button" ng-disabled="form.$invalid || !form.$dirty" class="btn-primary" ng-click="p.updateCartCountParts(p.countNumber[$index],product)">Add To Cart</button>
                     </div>
                 </div>
                 <div   ng-show = "product.quantity <= 0 " style="padding-bottom:10px;">
@@ -44,6 +45,7 @@
                 </div>
                 </div>
             </div>
+            </form>
         </div>
     </div>
 </div>

@@ -10,6 +10,32 @@
 
         var vm = this;
 
+            vm.validations = function()
+                {
+                        errorArray = [];
+                        if(vm.username == undefined || vm.username == '' || vm.username == null)
+                        {
+                            errorArray.push({
+                                'id' : 'username',
+                                'msg' : 'UserName is not valid'
+                            });
+                        }
+                        else if(vm.password == undefined || vm.password == '' || vm.password == null)
+                        {
+                            errorArray.push({
+                                'id' : 'password',
+                                'msg' : 'Password is not valid'
+                            });
+                        }
+                    if (errorArray.length >= 1) {
+                        util.customError.show(errorArray, "");
+
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+
         vm.addCustomer = function () {
 
             var request = {};

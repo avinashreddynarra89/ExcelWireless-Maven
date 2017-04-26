@@ -58,22 +58,31 @@ public class ProductManager {
 
             ProductEcomerceDto product = new ProductEcomerceDto();
 
-            int blobLength = (int)rs.getBlob("IMAGE").length();
+            try {
+                product.setProductId(rs.getInt("PRODUCT_ID"));
+                product.setProductNo(rs.getString("PRODUCT_NO"));
 
-            product.setProductId(rs.getInt("PRODUCT_ID"));
-            product.setProductNo(rs.getString("PRODUCT_NO"));
-            product.setDescription(rs.getString("DESCRIPTION"));
-            product.setCategoryId(rs.getInt("CATEGORY_ID"));
-            product.setModelId(rs.getInt("MODEL_ID"));
-            product.setVendorId(rs.getInt("VENDOR_ID"));
-            product.setBrandId(rs.getInt("BRAND_ID"));
-            product.setCostPrice(rs.getDouble("COST_PRICE"));
-            product.setRetailPrice(rs.getDouble("RETAIL_PRICE"));
-            product.setQuantity(rs.getInt("QUANTITY"));
-            // product.setAddTax(rs.getBoolean("TAX"));
+                int blobLength = (int) rs.getBlob("IMAGE").length();
 
-            if(blobLength != 0) {
-                product.setImage(rs.getBlob("IMAGE").getBytes(1, blobLength));
+
+                product.setDescription(rs.getString("DESCRIPTION"));
+                product.setCategoryId(rs.getInt("CATEGORY_ID"));
+                product.setModelId(rs.getInt("MODEL_ID"));
+                product.setVendorId(rs.getInt("VENDOR_ID"));
+                product.setBrandId(rs.getInt("BRAND_ID"));
+                product.setCostPrice(rs.getDouble("COST_PRICE"));
+                product.setRetailPrice(rs.getDouble("RETAIL_PRICE"));
+                product.setQuantity(rs.getInt("QUANTITY"));
+                // product.setAddTax(rs.getBoolean("TAX"));
+
+                if (blobLength != 0) {
+                    product.setImage(rs.getBlob("IMAGE").getBytes(1, blobLength));
+                }
+            }
+            catch (Exception e)
+            {
+                e.getStackTrace();
+                System.out.println(product.getProductNo());
             }
 
 

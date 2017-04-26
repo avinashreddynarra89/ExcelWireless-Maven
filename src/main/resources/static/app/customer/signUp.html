@@ -1,93 +1,308 @@
 <div class="container" ng-controller = "SignUpController as signUp">
-    <div style="font-size: 35px">
-        <h2>Create Customer</h2>
-    </div>
+    <!--<form name="signUpForm">-->
     <div class="row">
-        <form name="signUpForm">
-            <div class="col-md-4">
 
-                    <label>First Name:</label>
-                    <input type="text" class="form-control" placeholder="FirstName" ng-model = "signUp.firstName" required="true">
-            </div>
+        <div class="alert alert-danger" ng-if="$ctrl.showError">
+            {{$ctrl.showErrorMsg}}
+        </div>
 
-                <div class="col-md-4">
-                    <label>Last Name:</label>
-                    <input type="text" class="form-control" placeholder="LastName" ng-model = "signUp.lastName"> </input>
-                </div>
+        <div class="col-md-8 page-content">
 
-                <div class="col-md-4">
-                    <label>Phone Number:</label>
-                    <input type="text" class="form-control" placeholder="PhoneNumber" ng-model = "signUp.phoneNumber"> </input>
-                </div>
+            <div class="inner-box category-content">
+                <h2 class="title-2">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    Create your account, Its free
+                </h2>
 
-                <div class="col-md-4">
-                    <label>Tax Id:</label>
-                    <input type="text" class="form-control" placeholder="Tax Id" ng-model = "signUp.taxId"> </input>
-                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form class="form-horizontal" name="signUpForm">
+                            <fieldset>
+                                <!--start of first name-->
+                                <div class="form-group required">
+                                    <label class="col-md-4 control-label">
+                                        First Name:
+                                    </label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="First Name" ng-model = "signUp.firstName" required="true">
+                                </div>
+                                </div>
+                                <!--end of first name-->
 
-                <div class="col-md-4">
-                    <label>Date Of Birth:</label>
-                    <input type="text" class="form-control" placeholder="Date Of Birth" ng-model = "signUp.dateOfBirth"> </input>
-                </div>
-                <div class="col-md-4">
-                    <label>Email:</label>
-                    <input type="text" class="form-control" placeholder="Email" ng-model = "signUp.email"> </input>
-                </div>
-                <div class="col-md-4">
-                    <label>Customer Type:</label>
-                    <select class="form-control" ng-model = "signUp.customerType">
-                        <option selected="selected">Business Customer</option>
-                        <option>Retail Customer</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label>Gender:</label>
-                    <div>
-                        <label class="radio-inline">
-                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="male" ng-model = "signUp.gender">Male
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="female" ng-model = "signUp.gender">Female
-                        </label>
+                                <!--start of last name-->
+                                <div class="form-group required">
+                                    <label class="col-md-4 control-label">
+                                        Last Name:
+                                    </label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="Last Name" ng-model = "signUp.lastName"> </input>
+                                    </div>
+                                </div>
+                                <!--end of last name-->
+
+                                <!--start of Phone No-->
+                                <div class="form-group required">
+                                    <label class="col-md-4 control-label">
+                                        Phone Number:
+                                    </label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="PhoneNumber" ng-model = "signUp.phoneNumber"> </input>
+                                    </div>
+                                </div>
+                                <!--end of Phone No-->
+
+                                <!--start of Email-->
+                                <div class="form-group required">
+                                    <label class="col-md-4 control-label">
+                                        Email:
+                                    </label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="Email" ng-model = "signUp.email"> </input>
+                                    </div>
+                                </div>
+                                <!--end of Email-->
+
+                                <!--start of Text Id-->
+                                <div class="form-group required">
+                                    <label class="col-md-4 control-label">
+                                        Tax Id:
+                                    </label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="Tax Id" ng-model = "signUp.taxId"> </input>
+                                    </div>
+                                </div>
+                                <!--end of Text Id-->
+
+                                <!--start of Date Of Birth-->
+                                <div class="form-group required">
+                                    <label class="col-md-4 control-label">
+                                        Date Of Birth:
+                                    </label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="Date Of Birth" ng-model = "signUp.dateOfBirth"> </input>
+                                    </div>
+                                </div>
+                                <!--end of Date Of Birth-->
+                                <hr>
+
+                                <h4> <i class="fa fa-truck" aria-hidden="true"></i>
+                                    SHIPPING INFORMATION</h4>
+                                <hr>
+
+                                <!--start of Company Name -->
+                                <div class="form-group required">
+                                    <label class="col-md-4 control-label">
+                                        Company Name:
+                                    </label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="Company Name" ng-model = "signUp.companyName"> </input>
+                                    </div>
+                                </div>
+                                <!--end of Company Name-->
+
+                                <!--start of Address Line-1 -->
+                                <div class="form-group required">
+                                    <label class="col-md-4 control-label">
+                                        Business Address Line:
+                                    </label>
+                                    <div class="col-md-6">
+                                        <!--Todo Need to think for this-->
+                                        <input type="text" class="form-control" placeholder="Business Address Line" ng-model = "signUp.street"> </input>
+                                    </div>
+                                </div>
+                                <!--end of Address Line-1-->
+
+                                <!--start of Company Name -->
+                                <div class="form-group required">
+                                    <label class="col-md-4 control-label">
+                                        Company Name:
+                                    </label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="Company Name" ng-model = "signUp.companyName"> </input>
+                                    </div>
+                                </div>
+                                <!--end of Company Name-->
+
+                                <!--start of City -->
+                                <div class="form-group required">
+                                    <label class="col-md-4 control-label">
+                                        City:
+                                    </label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="City" ng-model = "signUp.city"> </input>
+                                    </div>
+                                </div>
+                                <!--end of City-->
+
+                                <!--start of State -->
+                                <div class="form-group required">
+                                    <label class="col-md-4 control-label">
+                                        State:
+                                    </label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" ng-model = "signUp.state">
+                                        <option>Georgia</option>
+                                        <option>New York</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!--end of State-->
+
+                                <!--start of County -->
+                                <div class="form-group required">
+                                    <label class="col-md-4 control-label">
+                                        County:
+                                    </label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" ng-model = "signUp.county">
+                                            <option>United State</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!--end of County-->
+
+                                <!--start of ZipCode -->
+                                <div class="form-group required">
+                                    <label class="col-md-4 control-label">
+                                        Zip/Postcode:
+                                    </label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="ZipCode" ng-model = "signUp.zipCode"> </input>
+                                    </div>
+                                </div>
+                                <!--end of ZipCode-->
+
+                                <div class="form-group ">
+                                    <div class="col-md-4 ">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button type="button" class="btn btn-primary" style="width: 100%;padding: 10px" ng-click = "signUp.addCustomer()">Register</button>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        </form>
                     </div>
-                    </div>
-        <div class="col-md-8">
-            <label>CompanyName:</label>
-            </div>
-        <div class="col-md-8">
-            <input type="text" class="form-control" placeholder="Company Name" ng-model = "signUp.companyName"> </input>
-        </div>
-        <div class="col-md-4">
-            <label>Street:</label>
-            <input type="text" class="form-control" placeholder="Street" ng-model = "signUp.street"> </input>
-        </div>
-        <div class="col-md-4">
-            <label>City:</label>
-            <input type="text" class="form-control" placeholder="City" ng-model = "signUp.city"> </input>
-        </div>
-        <div class="col-md-4">
-            <label>ZipCode:</label>
-            <input type="text" class="form-control" placeholder="ZipCode" ng-model = "signUp.zipCode"> </input>
-        </div>
-        <div class="col-md-4">
-            <label>State:</label>
-            <select class="form-control" ng-model = "signUp.state">
-                <option>Gorgia</option>
-                <option>New York</option>
-            </select>
-        </div>
-        <div class="col-md-12">
-            <div class="col-md-4"> </div>
-            <div class="col-md-4" style="padding: 15px">
-                <button type="button" class="btn btn-primary" style="width: 100%;padding: 10px" ng-click = "signUp.addCustomer()">Register</button>
-            </div>
-            <div class="col-md-4">
+                </div>
 
+            </div>
+        </div>
+
+        <div class="col-md-4 reg-sidebar">
+
+            <div class="reg-sidebar-inner text-center">
+                <div class="promo-text-box">
+                    <i class="fa fa-usd fa-4x" aria-hidden="true" style="color:#FF9113;"></i>
+                    <h3>Custom Price For You</h3>
+                    <p> Post your free online classified ads with us. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. </p>
+                </div>
+
+                <div class="promo-text-box">
+                    <i class="fa fa-pencil-square-o fa-4x" aria-hidden="true" style="color:#74C29B;"></i>
+                    <h3>Create and Manage Items</h3>
+                    <p> Post your free online classified ads with us. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. </p>
+                </div>
+
+                <div class="promo-text-box">
+                    <i class="fa fa-heart fa-4x" aria-hidden="true" style="color:red;"></i>
+                    <h3>Create your Favorite ads list</h3>
+                    <p> Post your free online classified ads with us. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. </p>
+                </div>
             </div>
 
         </div>
+    </div>
 
-        </form>
+
+
+
+            <!--<div class="col-md-4">-->
+
+                    <!--<label>First Name:</label>-->
+                    <!--<input type="text" class="form-control" placeholder="FirstName" ng-model = "signUp.firstName" required="true">-->
+            <!--</div>-->
+
+                <!--<div class="col-md-4">-->
+                    <!--<label>Last Name:</label>-->
+                    <!--<input type="text" class="form-control" placeholder="LastName" ng-model = "signUp.lastName"> </input>-->
+                <!--</div>-->
+
+                <!--<div class="col-md-4">-->
+                    <!--<label>Phone Number:</label>-->
+                    <!--<input type="text" class="form-control" placeholder="PhoneNumber" ng-model = "signUp.phoneNumber"> </input>-->
+                <!--</div>-->
+
+                <!--<div class="col-md-4">-->
+                    <!--<label>Tax Id:</label>-->
+                    <!--<input type="text" class="form-control" placeholder="Tax Id" ng-model = "signUp.taxId"> </input>-->
+                <!--</div>-->
+
+                <!--<div class="col-md-4">-->
+                    <!--<label>Date Of Birth:</label>-->
+                    <!--<input type="text" class="form-control" placeholder="Date Of Birth" ng-model = "signUp.dateOfBirth"> </input>-->
+                <!--</div>-->
+                <!--<div class="col-md-4">-->
+                    <!--<label>Email:</label>-->
+                    <!--<input type="text" class="form-control" placeholder="Email" ng-model = "signUp.email"> </input>-->
+                <!--</div>-->
+                <!--<div class="col-md-4">-->
+                    <!--<label>Customer Type:</label>-->
+                    <!--<select class="form-control" ng-model = "signUp.customerType">-->
+                        <!--<option selected="selected">Business Customer</option>-->
+                        <!--<option>Retail Customer</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+                <!--<div class="col-md-4">-->
+                    <!--<label>Gender:</label>-->
+                    <!--<div>-->
+                        <!--<label class="radio-inline">-->
+                            <!--<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="male" ng-model = "signUp.gender">Male-->
+                        <!--</label>-->
+                        <!--<label class="radio-inline">-->
+                            <!--<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="female" ng-model = "signUp.gender">Female-->
+                        <!--</label>-->
+                    <!--</div>-->
+                    <!--</div>-->
+        <!--<div class="col-md-8">-->
+            <!--<label>CompanyName:</label>-->
+            <!--</div>-->
+        <!--<div class="col-md-8">-->
+            <!--<input type="text" class="form-control" placeholder="Company Name" ng-model = "signUp.companyName"> </input>-->
+        <!--</div>-->
+        <!--<div class="col-md-4">-->
+            <!--<label>Street:</label>-->
+            <!--<input type="text" class="form-control" placeholder="Street" ng-model = "signUp.street"> </input>-->
+        <!--</div>-->
+        <!--<div class="col-md-4">-->
+            <!--<label>City:</label>-->
+            <!--<input type="text" class="form-control" placeholder="City" ng-model = "signUp.city"> </input>-->
+        <!--</div>-->
+        <!--<div class="col-md-4">-->
+            <!--<label>ZipCode:</label>-->
+            <!--<input type="text" class="form-control" placeholder="ZipCode" ng-model = "signUp.zipCode"> </input>-->
+        <!--</div>-->
+        <!--<div class="col-md-4">-->
+            <!--<label>State:</label>-->
+            <!--<select class="form-control" ng-model = "signUp.state">-->
+                <!--<option>Gorgia</option>-->
+                <!--<option>New York</option>-->
+            <!--</select>-->
+        <!--</div>-->
+        <!--<div class="col-md-12">-->
+            <!--<div class="col-md-4"> </div>-->
+            <!--<div class="col-md-4" style="padding: 15px">-->
+                <!--<button type="button" class="btn btn-primary" style="width: 100%;padding: 10px" ng-click = "signUp.addCustomer()">Register</button>-->
+            <!--</div>-->
+            <!--<div class="col-md-4">-->
+
+            <!--</div>-->
+
+        <!--</div>-->
+
+        <!--</form>-->
 
     </div>
         </div>
