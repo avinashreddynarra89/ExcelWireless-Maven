@@ -6,8 +6,11 @@
 
     function dataService($http, $log) {
         var service = {}, cache = false, vm = this;
+//        vm.domain = 'https://exwireless.cfapps.io/';
+//        vm.domain = 'https://firstproject-159400.appspot.com/';
 
         vm.domain = '';
+//        vm.domain = 'http://localhost:8080/';
         vm.port = '';
         vm.defaultMethodPath = 'getWebMenu';
 
