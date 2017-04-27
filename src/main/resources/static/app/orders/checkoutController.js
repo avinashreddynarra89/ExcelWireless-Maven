@@ -150,6 +150,7 @@
             StoreService.postData(GlobalVariable.URLCONSTANT+"checkoutTransactionLineItem",request,"application/json","application/json").then(
                 function (success) {
 
+                $rootScope.$broadcast('updateCount',0);
                 },
                 function (error) {
                     console.log("Failed to checkout final order");

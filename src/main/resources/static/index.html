@@ -126,9 +126,9 @@
                 </div>
             </div>
             <div class="col-sm-3 col-md-3 no-padding" ng-controller = "a as alok">
-                <a ng-href class="site-button cart-button" ng-click = "alok.getMenu()">
+                <a ng-href class="site-button cart-button" ng-click = "alok.getMenu()" data-ng-disabled="bodyCtrl.cartCount == 0 || bodyCtrl.cartCount == undefined || bodyCtrl.cartCount == ''">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                    <span class="badge cart-badge" ng-click = "bodyCtrl.renderOrderPage()" ng-show="GlobalVariable.isValidUser == 'true'">{{bodyCtrl.cartCount}}</span>
+                    <span class="badge cart-badge" ng-click = "bodyCtrl.renderOrderPage()" ng-show="GlobalVariable.isValidUser == 'true'" data-ng-disabled="bodyCtrl.cartCount == 0 || bodyCtrl.cartCount == undefined || bodyCtrl.cartCount == ''">{{bodyCtrl.cartCount}}</span>
                     <span class="cart-text"> Cart </span>
                 </a>
                 <a href="signIn.html" class="site-button login-button">

@@ -37,7 +37,7 @@
                      <input ng-show = "p.user" type="text" class="form-control" placeholder="Qty" ng-model="p.countNumber[$index]" data-restrict-characters="restrictCharacter.OnlyDigits.regExp" style="height: 30px"/>
                         </div>
                     <div class="col-md-6" style="padding-left: 4px;width: 70%;">
-                    <button style="width: 68px;font-size:9px;height: 30px;" ng-show = "p.user" type="button" ng-disabled="form.$invalid || !form.$dirty" class="btn-primary" ng-click="p.updateCartCountParts(p.countNumber[$index],product)">Add To Cart</button>
+                        <button style="width: 68px;font-size:9px;height: 30px;" ng-show = "p.user" type="button" class="btn-primary" ng-click="p.updateCartCountParts(p.countNumber[$index],product)" data-ng-disabled="p.countNumber[$index] == undefined || p.countNumber[$index] == ''">Add To Cart</button>
                     </div>
                 </div>
                 <div   ng-show = "product.quantity <= 0 " style="padding-bottom:10px;">
