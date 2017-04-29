@@ -2,10 +2,10 @@
     angular.module('excelWireless')
         .controller('ProductDetailsController', productDetailsController);
 
-    productDetailsController.$inject = ['GlobalVariable','$scope','RestrictedCharacter.Types','$rootScope','StoreService']
+    productDetailsController.$inject = ['util','GlobalVariable','$scope','RestrictedCharacter.Types','$rootScope','StoreService']
 
 
-    function  productDetailsController(GlobalVariable,restrictCharacter,$scope,$rootScope,StoreService) {
+    function  productDetailsController(util,GlobalVariable,restrictCharacter,$scope,$rootScope,StoreService) {
 
         var vm = this;
         vm.a = {};
@@ -28,12 +28,15 @@
             //sessionStorage.orderDetails = JSON.stringify(a);
             $rootScope.$emit('updateCount', value);
 
+            util.Wait(true);
             StoreService.postData(GlobalVariable.URLCONSTANT+"addTransactionLineItem", product, "application/json", "application/json").then(function (response) {
                     var data = response.data;
 
                     console.log("response data", data);
+                    util.Wait(false);
                 },
                 function (error) {
+                util.Wait(false);
                     console.log("getReplenishmentInfo call failed");
                 });
         }

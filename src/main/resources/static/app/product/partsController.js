@@ -2,9 +2,9 @@
     'use strict';
     angular.module('excelWireless').controller('PartsController', getPartsProduct);
 
-    getPartsProduct.$inject = ['GlobalVariable', 'StoreService', '$state', 'AppState', '$rootScope','$log', '$scope','RestrictedCharacter.Types'];
+    getPartsProduct.$inject = ['util','GlobalVariable', 'StoreService', '$state', 'AppState', '$rootScope','$log', '$scope','RestrictedCharacter.Types'];
 
-    function getPartsProduct(GlobalVariable, StoreService, $state, AppState,$rootScope,$log, $scope,restrictCharacter) {
+    function getPartsProduct(util,GlobalVariable, StoreService, $state, AppState,$rootScope,$log, $scope,restrictCharacter) {
 
         var vm = this;
 
@@ -50,12 +50,15 @@
             sessionStorage.orderDetails = JSON.stringify(product1);
             $rootScope.$emit('updateCount', value);
 
+            util.Wait(true);
             StoreService.postData(GlobalVariable.URLCONSTANT+"addTransactionLineItem", product, "application/json", "application/json").then(function (response) {
                     var data = response.data;
 
+                    util.Wait(false);
                     console.log("response data", data);
                 },
                 function (error) {
+                 util.Wait(false);
                     console.log("getReplenishmentInfo call failed");
                 });
         }
@@ -67,6 +70,7 @@
         function renderData() {
 
 
+            util.Wait(true);
             //call to get the price of the product by customer
             StoreService.getData(GlobalVariable.URLCONSTANT+'getProductPriceByCustomer?phoneNo='+sessionStorage.customerPhoneNo).then(
                 function (success) {
@@ -75,6 +79,7 @@
                     GlobalVariable.productPriceDto = success.data;
                 },
                 function (error) {
+                 util.Wait(false);
                     console.log("getReplenishmentInfo call failed");
                 });
 
@@ -83,6 +88,7 @@
                 function (success) {
                     // console.log(success.data)
                     //var i = 0;
+                    util.Wait(false);
                     var temProductDto = success.data;
 
                     if(sessionStorage.validUser)
@@ -105,6 +111,7 @@
                     }
                 },
                 function (error) {
+                util.Wait(false);
                     console.log("getReplenishmentInfo call failed");
                 });
 

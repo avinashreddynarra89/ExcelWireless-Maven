@@ -4,9 +4,9 @@
 
     angular.module('excelWireless').controller('CategoryProductController', getProduct);
 
-    getProduct.inject = ['$scope','$rootScope','GlobalVariable', 'StoreService', '$state', 'AppState'];
+    getProduct.inject = ['util','$scope','$rootScope','GlobalVariable', 'StoreService', '$state', 'AppState'];
 
-    function getProduct($scope,$rootScope,GlobalVariable, StoreService, $state, AppState) {
+    function getProduct(util,$scope,$rootScope,GlobalVariable, StoreService, $state, AppState) {
 
         var vm = this;
 
@@ -23,15 +23,20 @@
 
             console.log("CategoryId ="+ categoryId)
 
+            util.Wait(true);
+
             StoreService.getData(GlobalVariable.URLCONSTANT+'getProductsByCategory?category_Id='+categoryId).then(
                 function (success) {
                     console.log("category Product details"+ success.data)
+
+                    util.Wait(false);
 
                     GlobalVariable.productBtCategory = success.data;
                     vm.productDto = GlobalVariable.productBtCategory;
                     $state.go('categoryProducts');
                 },
                 function (error) {
+                 util.Wait(false);
                     console.log("Can not get products by category"+ error);
 
                 });
