@@ -114,7 +114,7 @@ public class SQLQueries {
           //  "TAX," +
             "FROM product where ACTIVE_FLAG = 1 AND IS_ECOMMERCE = 1";
 
-    public String getModelDetails = "SELECT * FROM product_model WHERE ID = ? AND ID <> 'NULL' ";
+    public String getModelDetails = "SELECT * FROM product_model WHERE ID = ? AND ID <> 'NULL' ORDER BY ID ASC ";
 
    // ORDER BY DESCRIPTION
 
@@ -159,7 +159,7 @@ public class SQLQueries {
 
 
 
-    public String getModelDetailsForBrand = "SELECT distinct MODEL_ID FROM product WHERE BRAND_ID = ? AND MODEL_ID <> 'NULL' ";
+    public String getModelDetailsForBrand = "SELECT distinct MODEL_ID FROM product WHERE BRAND_ID = ? AND MODEL_ID <> 'NULL' ORDER BY MODEL_ID ASC ";
 
     public String getProductDetailsByCategoryId = "SELECT " +
             " PRODUCT_NO," +
