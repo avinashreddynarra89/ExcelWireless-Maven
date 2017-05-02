@@ -1,8 +1,8 @@
 
 <div class="container" ng-controller = "CategoryProductController as test1">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-3" ng-repeat = "product in test1.productDto">
+    <div class="row constrained">
+        <div class="col-md-12" infinite-scroll="test1.increaseLimit()" infinite-scroll-container='".constrained"'>
+            <div class="col-md-3" ng-repeat = "product in test1.productDto | limitTo:test1.barLimit" style="height:300px;">
                 <div>
                     <img ng-src="data:image/JPEG;base64,{{product.image}}" ng-click = "test1.getProductDetails(product)" class= "img-responsive"  > 
                 </div>
