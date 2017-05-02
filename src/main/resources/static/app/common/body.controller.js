@@ -3,9 +3,9 @@
 
     angular.module('excelWireless').controller('BodyController', Body);
 
-    Body.$inject = ['$scope','$rootScope', '$state', '$window', '$log', '$timeout', 'dataService', 'StoreService','GlobalVariable'];
+    Body.$inject = ['util','$scope','$rootScope', '$state', '$window', '$log', '$timeout', 'dataService', 'StoreService','GlobalVariable'];
 
-    function Body($scope, $rootScope,$state, $window, $log, $timeout, dataService, StoreService,GlobalVariable) {
+    function Body(util,$scope, $rootScope,$state, $window, $log, $timeout, dataService, StoreService,GlobalVariable) {
 
         var vm = this;
         vm.showMenu = false;
@@ -77,6 +77,7 @@
                 $log.info(dataItem);
                 item = _.find(vm.dataList, function(o) { return o.categoryId === dataItem.categoryId; });
                 $log.info(item);
+                util.Wait(true);
                 if (item) {
 
                         StoreService.getData(GlobalVariable.URLCONSTANT+'getProductsByCategory?category_Id='+item.categoryId).then(
@@ -202,7 +203,7 @@
         }
 
         vm.getProductDetails = function () {
-
+             util.Wait(true);
             StoreService.getData(GlobalVariable.URLCONSTANT+"getProductForSearch").then(
                 function (success) {
                     GlobalVariable.productForSearch = success.data;
@@ -211,6 +212,7 @@
                         vm.productNames
                             .push(GlobalVariable.productForSearch[i].description);
                     }
+                     util.Wait(false);
                 },
                 function (error) {
                     console.log("Failed to get customers order details");
@@ -219,7 +221,7 @@
 
         //this function helps to get product details which is searched on search box and also get the related products with that products.
         vm.getProducts = function () {
-
+             util.Wait(true);
             StoreService.getData(GlobalVariable.URLCONSTANT+"getProductsByDescription?description="+vm.description).then(
                 function (success) {
                     GlobalVariable.product = success.data;
