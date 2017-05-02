@@ -15,6 +15,10 @@
         vm.brandAndModelDetails = GlobalVariable.brandModelDto;
 
         $scope.restrictCharacter = restrictCharacter;
+        vm.barLimit = 10;
+        vm.increaseLimit = function () {
+            vm.barLimit += 20;
+        }
 
         //
 
@@ -49,7 +53,7 @@
             vm.user =  sessionStorage.validUser;
             console.log("is valid user"+ vm.user);
 
-            util.Wait(true);
+            
             StoreService.getData(GlobalVariable.URLCONSTANT+'getSideBardForParts').then(
                 function (success) {
                     // console.log(success.data)
