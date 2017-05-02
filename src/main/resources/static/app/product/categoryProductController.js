@@ -11,7 +11,10 @@
         var vm = this;
 
         vm.productDto = {};
-
+         vm.barLimit = 10;
+        vm.increaseLimit = function () {
+            vm.barLimit += 20;
+        }
         vm.isValidUser = function () {
             vm.user =  sessionStorage.validUser;
             console.log("is valid user"+ vm.user);
