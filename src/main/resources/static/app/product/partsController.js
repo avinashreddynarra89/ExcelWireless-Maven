@@ -114,14 +114,16 @@
                 util.Wait(false);
                     console.log("getReplenishmentInfo call failed");
                 });
-
+  util.Wait(true);
             StoreService.getData(GlobalVariable.URLCONSTANT+'getSideBardForParts').then(
                 function (success) {
                     // console.log(success.data)
+                     util.Wait(false);
                     $scope.items = success.data;
                     GlobalVariable.items = $scope.items;
                 },
                 function (error) {
+                      util.Wait(false);
                     console.log("getReplenishmentInfo call failed");
                 });
 
