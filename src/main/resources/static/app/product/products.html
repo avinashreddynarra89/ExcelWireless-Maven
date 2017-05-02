@@ -1,7 +1,7 @@
 
 <div class="container" ng-controller = "ProductController as productCtrl">
     <div class="row constrained">
-        <div class="col-md-12">
+        <div class="col-md-12" infinite-scroll="productCtrl.increaseLimit()" infinite-scroll-container='".constrained"'>
             <div class="col-md-3 mycontainer">
 
                 <div class="left-nav">
@@ -26,7 +26,7 @@
 
 
 
-            <div class="col-md-2" ng-repeat = "product in GlobalVariable.product" style="height:260px;">
+            <div class="col-md-2" ng-repeat = "product in GlobalVariable.product| limitTo:productCtrl.barLimit" style="height:300px;">
 
                 <div  class= "img-responsive">
                     <img ng-src="data:image/JPEG;base64,{{product.image}}" ng-click = "productCtrl.getProductDetails(product)" > 
