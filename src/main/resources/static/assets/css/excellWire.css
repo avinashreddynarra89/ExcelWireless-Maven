@@ -79,6 +79,7 @@ footer {
     border-bottom: 1px solid #CCCCCC;
     border-top: 1px solid #DDDDDD;
     margin-top: 10px;
+    bottom:0;
 }
 .top-nav {
     min-height: 34px;
